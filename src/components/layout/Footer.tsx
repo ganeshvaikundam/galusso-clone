@@ -36,8 +36,8 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Connect</h4>
           <div className="flex gap-3 mb-5">
-            <a href="#" aria-label="Twitter" className="h-9 w-9 rounded-md bg-white/10 hover:bg-[hsl(var(--orange))] grid place-items-center transition-colors"><Twitter className="h-4 w-4" /></a>
-            <a href="#" aria-label="Facebook" className="h-9 w-9 rounded-md bg-white/10 hover:bg-[hsl(var(--orange))] grid place-items-center transition-colors"><Facebook className="h-4 w-4" /></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter" id="social-twitter" className="h-9 w-9 rounded-md bg-white/10 hover:bg-[hsl(var(--orange))] grid place-items-center transition-colors"><Twitter className="h-4 w-4" /></a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" id="social-facebook" className="h-9 w-9 rounded-md bg-white/10 hover:bg-[hsl(var(--orange))] grid place-items-center transition-colors"><Facebook className="h-4 w-4" /></a>
           </div>
           <form
             onSubmit={(e) => { e.preventDefault(); if (email) setSubscribed(true); }}
