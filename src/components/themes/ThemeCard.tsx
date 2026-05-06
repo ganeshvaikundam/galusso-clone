@@ -33,6 +33,15 @@ const ThemeCard = ({ theme }: { theme: ThemeItem }) => {
           <button onClick={() => setPreviewOpen(true)} className="btn-ghost-orange flex-1">Demo</button>
           <button onClick={() => setDownloadOpen(true)} className="btn-primary flex-1">Download</button>
         </div>
+        <a
+          href={`https://galussothemes.com/?demo=${encodeURIComponent(theme.id)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid={`live-preview-${theme.id}`}
+          className="mt-2 block text-center text-xs text-[hsl(var(--orange))] hover:underline"
+        >
+          Open Live Preview in new tab ↗
+        </a>
       </div>
 
       <Modal open={previewOpen} onClose={() => setPreviewOpen(false)} title={`${theme.name} — Preview`} size="xl">
@@ -43,6 +52,13 @@ const ThemeCard = ({ theme }: { theme: ThemeItem }) => {
           </div>
         </div>
         <div className="mt-4 flex justify-end gap-2">
+          <button
+            onClick={() => window.open(`https://galussothemes.com/?demo=${encodeURIComponent(theme.id)}`, "_blank", "noopener,noreferrer,width=1200,height=800")}
+            data-testid={`open-window-${theme.id}`}
+            className="rounded-md border px-4 py-2 text-sm"
+          >
+            Open in New Window
+          </button>
           <button onClick={() => setPreviewOpen(false)} className="rounded-md border px-4 py-2 text-sm">Close</button>
           <button onClick={() => { setPreviewOpen(false); setDownloadOpen(true); }} className="btn-primary">Download</button>
         </div>
